@@ -29,7 +29,7 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<header class="woocommerce-products-header">
+
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		
 		<main class="site-main homepage" role="main">
@@ -49,7 +49,7 @@ do_action( 'woocommerce_before_main_content' );
 	 */
 	do_action( 'woocommerce_archive_description' );
 	?>
-</header>
+
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -101,11 +101,5 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-// do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );

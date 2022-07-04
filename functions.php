@@ -38,3 +38,41 @@ function artezpress_style() {
     wp_enqueue_style('artezpress-css');
 }
 add_action('wp_enqueue_scripts', 'artezpress_style');
+
+remove_action( 'woocommerce_before_main_content', 'storefront_before_content', 10 );
+remove_action( 'woocommerce_after_main_content', 'storefront_after_content', 10 );
+
+remove_action( 'homepage', 'storefront_product_categories', 20 );
+remove_action( 'homepage', 'storefront_recent_products', 30 );
+remove_action( 'homepage', 'storefront_featured_products', 40 );
+remove_action( 'homepage', 'storefront_popular_products', 50 );
+remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+remove_action( 'homepage', 'storefront_best_selling_products', 70 );
+
+if ( ! function_exists( 'storefront_before_content' ) ) {
+    /**
+     * Before Content
+     * Wraps all WooCommerce content in wrappers which match the theme markup
+     *
+     * @since   1.0.0
+     * @return  void
+     */
+    function storefront_before_content() {
+        ?>
+      <?php 
+    }
+}
+
+if ( ! function_exists( 'storefront_after_content' ) ) {
+    /**
+     * After Content
+     * Closes the wrapping divs
+     *
+     * @since   1.0.0
+     * @return  void
+     */
+    function storefront_after_content() {
+        ?>
+        <?php
+    }
+}
