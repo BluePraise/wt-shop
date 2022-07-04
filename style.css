@@ -69,7 +69,7 @@ figure {
 }
 .mr-ubu img {
     width:  auto;
-    max-height:  100vh;
+    max-height:  80vh;
 }
 
 ul.menu-bar {
@@ -82,4 +82,9 @@ ul.menu-bar {
 ul.menu-bar li a {
     text-decoration: none;
 
+}
+
+/* helpers  */
+.hide {
+    display:  none;
 }
