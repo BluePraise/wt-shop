@@ -14,11 +14,72 @@
     Template: storefront
 */
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+html {
+  scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; } }
+
+body {
+  position: relative;
+  z-index: 0;
+  font-kerning: normal;
+  -webkit-font-feature-settings: "kern"on, "kern", "ss01";
+          font-feature-settings: "kern"on, "kern", "ss01";
+  letter-spacing: 0.012rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial Narrow, sans-serif;
+  font-weight: 400;
+  font-size: 2.1rem;
+  line-height: 3rem; 
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    color:  black;
+}
+
+figure {
+    margin: 0;
+    padding:  0;
+}
+
 .site-main {
     padding:  0 20px;
     margin:  0 auto;
 }
 
 .mr-ubu {
-    
+    text-align: center;
+}
+.mr-ubu img {
+    width:  auto;
+    max-height:  100vh;
+}
+
+ul.menu-bar {
+    list-style:  none;
+    margin: 0;
+    padding:  0;
+    display:  flex;
+    justify-content: space-evenly;
+}
+ul.menu-bar li a {
+    text-decoration: none;
+
 }
