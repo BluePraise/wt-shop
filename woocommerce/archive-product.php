@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_main_content' );
 		<main class="site-main homepage" role="main">
 
 			<figure class="mr-ubu">
-				<img src="<?php echo get_stylesheet_directory_uri()?>/assets/images/Véritable_portrait_de_Monsieur_Ubu.png" alt="Véritable_portrait_de_Monsieur_Ubu"></figure>
+				<img src="<?php echo get_stylesheet_directory_uri(); ?> /assets/images/Véritable_portrait_de_Monsieur_Ubu.png" alt="Véritable_portrait_de_Monsieur_Ubu"></figure>
 		</main><!-- #main -->
 	<?php endif; ?>
 

@@ -88,3 +88,6 @@ ul.menu-bar li a {
 .hide {
     display:  none;
 }
+.woocommerce-info {
+    text-align: center;
+}
