@@ -1,7 +1,7 @@
 <?php get_template_part('head');?>
 <header>
 	<nav class="main-nav">
-		<ul class="menu-bar">
+		<ul class="menu-bar reset-list">
 			<li><a href="/">WT Shop</a></li>
 			<li><a href="/">(Random)</a></li>
 			<li><a href="/">(List)</a></li>

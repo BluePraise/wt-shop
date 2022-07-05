@@ -59,6 +59,12 @@ figure {
     padding:  0;
 }
 
+ul.reset-list {
+    list-style:  none;
+    margin: 0;
+    padding:  0;
+}
+
 .site-main {
     padding:  0 20px;
     margin:  0 auto;
@@ -73,15 +79,17 @@ figure {
 }
 
 ul.menu-bar {
-    list-style:  none;
-    margin: 0;
-    padding:  0;
     display:  flex;
     justify-content: space-evenly;
 }
 ul.menu-bar li a {
     text-decoration: none;
 
+}
+
+ul.frontpage--product-view {
+    max-width:  1440px;
+    margin:  0 auto;
 }
 
 /* helpers  */

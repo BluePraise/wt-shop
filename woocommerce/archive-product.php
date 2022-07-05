@@ -1,5 +1,6 @@
 <?php
 /**
+ * WT SHOP THEME
  * The Template for displaying product archives, including the main shop page which is a post type archive
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
@@ -26,28 +27,19 @@ get_header( 'shop' );
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
-do_action( 'woocommerce_before_main_content' );
+// do_action( 'woocommerce_before_main_content' );
 
 ?>
 
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		
-		<main class="site-main homepage" role="main">
+		<main class="site-main" role="main">
 
 			<figure class="mr-ubu">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Véritable_portrait_de_Monsieur_Ubu.png" alt="Véritable_portrait_de_Monsieur_Ubu"></figure>
-		</main><!-- #main -->
+		
 	<?php endif; ?>
-
-	<?php
-	/**
-	 * Hook: woocommerce_archive_description.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action( 'woocommerce_archive_description' );
-	?>
+	
 
 <?php
 if ( woocommerce_product_loop() ) {
@@ -98,7 +90,7 @@ if ( woocommerce_product_loop() ) {
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action( 'woocommerce_after_main_content' );
+do_action( 'woocommerce_after_main_content' );?>
 
-
-get_footer( 'shop' );
+</main><!-- #main -->
+<?php get_footer( 'shop' );

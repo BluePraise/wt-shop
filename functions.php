@@ -39,15 +39,33 @@ function artezpress_style() {
 }
 add_action('wp_enqueue_scripts', 'artezpress_style');
 
-remove_action( 'woocommerce_before_main_content', 'storefront_before_content', 10 );
-remove_action( 'woocommerce_after_main_content', 'storefront_after_content', 10 );
+add_action('init' , 'remove_functions' , 15 );
 
-remove_action( 'homepage', 'storefront_product_categories', 20 );
-remove_action( 'homepage', 'storefront_recent_products', 30 );
-remove_action( 'homepage', 'storefront_featured_products', 40 );
-remove_action( 'homepage', 'storefront_popular_products', 50 );
-remove_action( 'homepage', 'storefront_on_sale_products', 60 );
-remove_action( 'homepage', 'storefront_best_selling_products', 70 );
+function remove_functions() {
+    remove_action( 'woocommerce_before_main_content', 'storefront_before_content', 10 );
+    remove_action( 'woocommerce_after_main_content', 'storefront_after_content', 10 );
+
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_recent_products', 30 );
+    remove_action( 'homepage', 'storefront_featured_products', 40 );
+    remove_action( 'homepage', 'storefront_popular_products', 50 );
+    remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+    remove_action( 'homepage', 'storefront_homepage_content', 10 );
+    remove_action( 'homepage', 'storefront_best_selling_products', 70 );
+    remove_action( 'woocommerce_after_shop_loop', 'storefront_sorting_wrapper', 9 );
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 30 );
+    remove_action( 'woocommerce_after_shop_loop', 'storefront_sorting_wrapper_close', 31 );
+
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_sorting_wrapper', 9 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_sorting_wrapper_close', 31 );
+
+}
+
 
 if ( ! function_exists( 'storefront_before_content' ) ) {
     /**
@@ -59,6 +77,7 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
      */
     function storefront_before_content() {
         ?>
+        <main class="site-main" role="main">
       <?php 
     }
 }
@@ -73,6 +92,7 @@ if ( ! function_exists( 'storefront_after_content' ) ) {
      */
     function storefront_after_content() {
         ?>
+       </main>
         <?php
     }
 }
